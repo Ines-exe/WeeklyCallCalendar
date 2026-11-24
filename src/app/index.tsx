@@ -1,5 +1,9 @@
 import { useRef } from 'react';
-import { Alert, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+//for now
+import { router } from 'expo-router';
 
 export default function HomeScreen() {
   const textValue = useRef('');
@@ -21,16 +25,21 @@ export default function HomeScreen() {
         <Pressable style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Continue</Text>
         </Pressable>
-      </SafeAreaView>
 
-      <Text style = {styles.text}>or</Text>
-      
-      <SafeAreaView style = {styles.inputContainer}>
+        <Text style = {styles.text}>or</Text>
+
         <Pressable style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Continue with Google</Text>
         </Pressable>
       </SafeAreaView>
-    </View>
+
+    {/* For now */}
+      <Pressable
+        onPress={() => router.push('/startOfWeek')}>
+        <Text>Go to next page</Text>
+      </Pressable>  
+
+    </View>       
 
   );
 }
@@ -43,6 +52,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10
   },
+  
   text: {
     color: 'black',
     textAlign: 'center',
@@ -54,8 +64,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     color: 'black',
-    marginTop: 150,
-    marginBottom: 70,
+    marginTop: 50,
+    marginBottom: 35,
     padding: 20
   },
 
@@ -84,7 +94,7 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: 'black',
-    padding: 15,
+    padding: 10,
     borderRadius: 10,
     alignItems: 'center'
   },
