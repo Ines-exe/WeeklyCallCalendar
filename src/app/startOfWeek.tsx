@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 5,
     width: '90%',
+    alignSelf: 'center'
   },
 
   dayBox: {
@@ -177,7 +178,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F2F2F2',
     padding: 16, 
     borderRadius: 14,
-    width: '90%'
+    width: '90%',
+    alignSelf: 'center'
   },
 
   deadlineTitle: {
